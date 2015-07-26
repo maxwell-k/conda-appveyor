@@ -6,9 +6,7 @@ build_script:
   - >
       appveyor DownloadFile
       http://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe
-  - ps: >
-      Start-Process -FilePath '.\Miniconda3-latest-Windows-x86_64.exe'
-      -ArgumentList '/S /D=C:\Python34-x64' -Wait -Passthru
+  - .\Miniconda3-latest-Windows-x86_64.exe /S /D=C:\Python34-x64
   - C:\Python34-x64\Scripts\conda.exe update conda --yes
   - C:\Python34-x64\Scripts\conda.exe install conda-build --yes
   - C:\Python34-x64\Scripts\conda.exe build winshell
