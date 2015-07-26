@@ -1,6 +1,7 @@
 # Environment
 
-A way to install `vim` on Windows using `conda`, specifically install a version of `gvim` on Windows that is compatible with `vim-ipython`.
+A way to install `vim` on Windows using `conda`, specifically install a
+version of `gvim` on Windows that is compatible with `vim-ipython`.
 
 ## Notes
 

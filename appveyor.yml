@@ -1,0 +1,10 @@
+version: "{build}"
+
+init:
+  - ps: >
+      $blockRdp = $true;
+      iex ((new-object net.webclient).DownloadString(("{0}{1}" -f
+      'https://raw.githubusercontent.com/appveyor/ci/master/scripts/',
+      'enable-rdp.ps1')))
+
+# vim: tabstop=2 shiftwidth=2
