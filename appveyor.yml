@@ -9,12 +9,12 @@ build_script:
   - ps: >
       Start-Process -FilePath '.\Miniconda3-latest-Windows-x86_64.exe'
       -ArgumentList '/S /D=C:\Python34-x64' -Wait -Passthru
-  - conda update conda --yes
-  - conda install conda-build --yes
-  - conda build winshell
+  - C:\Python34-x64\Scripts\conda.exe update conda --yes
+  - C:\Python34-x64\Scripts\conda.exe install conda-build --yes
+  - C:\Python34-x64\Scripts\conda.exe build winshell
   - >
       appveyor PushArtifact
-      C:\Python34-64\conda-bld\win-64\winshell-0.6-py34_0.tar.bz2
+      C:\Python34-x64\conda-bld\win-64\winshell-0.6-py34_0.tar.bz2
 # - ps: >
 #     $blockRdp = $true;
 #     iex ((new-object net.webclient).DownloadString(("{0}{1}" -f
