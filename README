@@ -41,4 +41,8 @@ A way to install `vim` on Windows using `conda`, specifically install a version 
         In  [1]: a
         Out [1]: 2
 
+# References
+
+-   http://technicaldiscovery.blogspot.co.uk/2013/12/why-i-promote-conda.html
+
 <!-- vim: set ft=markdown: -->
