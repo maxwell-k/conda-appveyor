@@ -10,9 +10,11 @@ source:
 requirements:
   build:
     - python
+    - pywin32
 
   run:
     - python
+    - pywin32
 
 about:
   home: https://github.com/tjguk/winshell
