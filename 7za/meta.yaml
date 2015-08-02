@@ -16,3 +16,4 @@ build:
 about:
   home: http://www.7-zip.org
   license: LGPL
+  summary: 7-Zip is a file archiver with a high compression ratio.

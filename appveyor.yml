@@ -17,18 +17,22 @@ init: # Install and update conda
 
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
-  - C:\Python34-x64\Scripts\conda.exe build winshell -q
   - C:\Python34-x64\Scripts\conda.exe build 7za -q
+  - C:\Python34-x64\Scripts\conda.exe build winshell -q
 
 after_build:
   - cd C:\Python34-x64\conda-bld\win-64\
+# A second, identical appveyor build results in a conflict that shows as a
+# build failure. To add a new build increment the build number in meta.yaml.
   - >
       for %%i in (
-      winshell-*.tar.bz2
       7za-*.tar.bz2
+      winshell-*.tar.bz2
       ) do (
       appveyor PushArtifact %%i &&
-      %APPVEYOR_BUILD_FOLDER%\upload.bat %auth_token% %%i
+      C:\Python34-x64\Scripts\anaconda.exe -t %auth_token%
+      upload --no-progress %%i 2> nul ||
+      cmd /c "exit /b 0"
       )
 
 # To debug using Remote Desktop Protocal (RDP):
