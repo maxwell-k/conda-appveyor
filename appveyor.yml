@@ -1,5 +1,9 @@
 version: "{build}"
 
+environment:
+  auth_token:
+    secure: JX1qsRmmO9Lw2BUk9rVv4Eht+1vvE3wCS56PXjcWDQhGZs+Kj/38hzYb8T6zMKuS
+
 init: # Install and update conda
   - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
   - >
