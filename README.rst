@@ -1,5 +1,9 @@
-A way to install ``vim`` on Windows using `conda`, specifically install a
-version of `gvim` on Windows that is compatible with `vim-ipython`.
+A way to install vim_ on Windows using conda_, specifically install a
+version of ``gvim`` on Windows 7 that is compatible with vim-ipython_.
+
+.. _vim: http://www.vim.org
+.. _conda: http://conda.pydata.org
+.. _vim-ipython: https://github.com/ivanov/vim-ipython
 
 Notes
 =====
@@ -7,12 +11,12 @@ Notes
 -   Remove any existing versions of Python **first**
 -   Generally doesn't require local administrator rights
 -   AVG causes an issue which requires local administrator rights
--   Installs into `%USERPROFILE%\Miniconda3` or
-    `%USERPROFILE%\AppData\Local\Coninuum\Miniconda3`
--   `cmd` lines in `appveyor.yml` are treated as batch files, so double percent
-    signs: %%i not %i
--   `cmd.exe` shell doesn't support wild-card expansion, applications have to
--   `README.md` or `README.rst` as a link to `README` won't work on FAT
+-   Installs into ``%USERPROFILE%\Miniconda3`` or
+    ``%USERPROFILE%\AppData\Local\Coninuum\Miniconda3``
+-   ``cmd`` lines in ``appveyor.yml`` are treated as batch files, so double
+    percent signs: ``%%i`` not ``%i``
+-   ``cmd.exe`` shell doesn't support wild-card expansion, applications have to
+-   ``README.md`` or ``README.rst`` as a link to ``README`` won't work on FAT
     file-systems
 
 
