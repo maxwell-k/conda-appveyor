@@ -18,12 +18,14 @@ init: # Install and update conda
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
   - C:\Python34-x64\Scripts\conda.exe build winshell -q
+  - C:\Python34-x64\Scripts\conda.exe build 7za -q
 
 after_build:
   - cd C:\Python34-x64\conda-bld\win-64\
   - >
       for %%i in (
       winshell-*.tar.bz2
+      7za-*.tar.bz2
       ) do (
       appveyor PushArtifact %%i &&
       %APPVEYOR_BUILD_FOLDER%\upload.bat %auth_token% %%i
