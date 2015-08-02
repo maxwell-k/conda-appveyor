@@ -18,6 +18,23 @@ Notes
 -   ``cmd.exe`` shell doesn't support wild-card expansion, applications have to
 -   ``README.md`` or ``README.rst`` as a link to ``README`` won't work on FAT
     file-systems
+-   Encrypt data from the account menu or using
+    https://ci.appveyor.com/tools/encrypt
+-   Create an authentication token with::
+        rem Login with password:
+        anaconda login
+        rem Show current user information:
+        anaconda whoami
+        rem List tokens:
+        anaconda auth -l
+        rem Remove a token:
+        anaconda auth -r <name>
+        rem Show help:
+        anaconda auth -h
+        rem Create a token named appveyor:
+        anaconda auth -n appveyor --create --out token.txt
+        rem Different scopes can be specified with -x
+
 
 
 Steps

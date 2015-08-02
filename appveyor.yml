@@ -11,8 +11,8 @@ init: # Install and update conda
       http://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe
   - .\Miniconda3-latest-Windows-x86_64.exe /S /D=C:\Python34-x64
   - C:\Python34-x64\Scripts\conda.exe update conda --yes -q
-  - C:\Python34-x64\Scripts\conda.exe install unxutils --yes -q
   - C:\Python34-x64\Scripts\conda.exe install conda-build --yes -q
+  - C:\Python34-x64\Scripts\conda.exe install anaconda-client --yes -q
   - del .\Miniconda3-latest-Windows-x86_64.exe
 
 build_script:
@@ -24,13 +24,17 @@ after_build:
   - >
       for %%i in (
       winshell-*.tar.bz2
-      ) do appveyor PushArtifact %%i
+      ) do (
+      appveyor PushArtifact %%i &&
+      C:\Python34-x64\Scripts\anaconda.exe -t %auth_token%
+      upload --no-progress %%i
+      )
 
 # To debug using Remote Desktop Protocal (RDP):
-  - ps: >
-      $blockRdp = $true;
-      iex ((new-object net.webclient).DownloadString(("{0}{1}" -f
-      'https://raw.githubusercontent.com/appveyor/ci/master/scripts/',
-      'enable-rdp.ps1')))
+# - ps: >
+#     $blockRdp = $true;
+#     iex ((new-object net.webclient).DownloadString(("{0}{1}" -f
+#     'https://raw.githubusercontent.com/appveyor/ci/master/scripts/',
+#     'enable-rdp.ps1')))
 
 # vim: softtabstop=2 shiftwidth=2
