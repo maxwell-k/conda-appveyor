@@ -1,7 +1,6 @@
 version: "{build}"
 
-init:
-  # Install and update conda
+init: # Install and update conda
   - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
   - >
       appveyor DownloadFile
@@ -12,10 +11,17 @@ init:
   - del .\Miniconda3-latest-Windows-x86_64.exe
 
 build_script:
-  # winshell
+  - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
   - C:\Python34-x64\Scripts\conda.exe build winshell -q
+
+after_build:
   - cd C:\Python34-x64\conda-bld\win-64\
-  - for %%i in ( winshell-*.tar.bz2 ) do appveyor PushArtifact %%i
+  - >
+      for %%i in (
+      winshell-*.tar.bz2
+      ) do appveyor PushArtifact %%i
+
+# To debug using Remote Desktop Protocal (RDP):
 # - ps: >
 #     $blockRdp = $true;
 #     iex ((new-object net.webclient).DownloadString(("{0}{1}" -f

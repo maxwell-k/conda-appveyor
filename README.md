@@ -10,6 +10,9 @@ version of `gvim` on Windows that is compatible with `vim-ipython`.
 -   AVG causes an issue which requires local administrator rights
 -   Installs into `%USERPROFILE%\Miniconda3` or
     `%USERPROFILE%\AppData\Local\Coninuum\Miniconda3`
+-   cmd lines in appveyor.yml are treated as batch files, so double percent
+    signs: %%i not %i
+-   cmd.exe shell doesn't support wildcard expansion, applications have to
 
 
 ## Steps
@@ -45,6 +48,13 @@ version of `gvim` on Windows that is compatible with `vim-ipython`.
 
 # References
 
--   http://technicaldiscovery.blogspot.co.uk/2013/12/why-i-promote-conda.html
+-   Why i promote conda, Travis Oliphant
+    http://technicaldiscovery.blogspot.co.uk/2013/12/why-i-promote-conda.html
+-   Build and test recipes for conda, Conda organisation
+    https://github.com/conda/conda-recipes
+-   Percent signs stripped from batch file text, Microsoft
+    https://support.microsoft.com/en-us/kb/75634
+-   appveyor.yml reference, AppVeyor
+    http://www.appveyor.com/docs/appveyor-yml
 
 <!-- vim: set ft=markdown: -->
