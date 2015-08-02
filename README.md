@@ -13,6 +13,7 @@ version of `gvim` on Windows that is compatible with `vim-ipython`.
 -   cmd lines in appveyor.yml are treated as batch files, so double percent
     signs: %%i not %i
 -   cmd.exe shell doesn't support wildcard expansion, applications have to
+-   `README.md` as a link to `README` won't work on FAT filesystems
 
 
 ## Steps
