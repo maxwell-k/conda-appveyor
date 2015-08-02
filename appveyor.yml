@@ -26,8 +26,7 @@ after_build:
       winshell-*.tar.bz2
       ) do (
       appveyor PushArtifact %%i &&
-      C:\Python34-x64\Scripts\anaconda.exe -t %auth_token%
-      upload --no-progress %%i
+      %APPVEYOR_BUILD_FOLDER%\upload.bat %auth_token% %%i
       )
 
 # To debug using Remote Desktop Protocal (RDP):
