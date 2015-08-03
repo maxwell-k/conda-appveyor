@@ -2,7 +2,7 @@ package:
   name: 7za
   version: "9.20"
   # More recent versions than 9.20 are not available as zip files only .7z,
-  # .exe or .msi files
+  # .exe or .msi files. 9.20 is the latest stable version.
 
 source:
   fn: 7za920.zip [win]

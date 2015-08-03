@@ -23,9 +23,7 @@ build_script:
       C:\Python34-x64\Scripts\conda.exe install
       C:\Python34-x64\conda-bld\win-64\7za-9.20-1.tar.bz2
       --yes -q -f
-  - C:\Python34-x64\Scripts\7za.exe
-  - C:\Python34-x64\Scripts\conda.exe list
-  - C:\Python34-x64\Scripts\conda.exe info
+  - C:\Python34-x64\Scripts\conda.exe build 7za -q
 
 after_build:
   - cd C:\Python34-x64\conda-bld\win-64\

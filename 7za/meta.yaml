@@ -1,0 +1,25 @@
+package:
+  name: 7za
+  version: "15.05"
+
+source:
+  fn: 7z1505-extra.7z [win64]
+  url: http://downloads.sourceforge.net/sevenzip/7z1505-extra.7z [win64]
+  sha1: 0837fe63ede13eadf4442eda7e275c6c1e5731a8
+  md5: 3420fb5bfd55bcc26d8c0d4a42d39fd7
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - 7za ==9.20
+
+test:
+  commands:
+    - 7za --help
+
+about:
+  home: http://www.7-zip.org
+  license: LGPL
+  summary: 7-Zip is a file archiver with a high compression ratio.
