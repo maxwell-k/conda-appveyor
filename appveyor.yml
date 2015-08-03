@@ -36,10 +36,10 @@ after_build:
       )
 
 # To debug using Remote Desktop Protocal (RDP):
-# - ps: >
-#     $blockRdp = $true;
-#     iex ((new-object net.webclient).DownloadString(("{0}{1}" -f
-#     'https://raw.githubusercontent.com/appveyor/ci/master/scripts/',
-#     'enable-rdp.ps1')))
+  - ps: >
+      $blockRdp = $true;
+      iex ((new-object net.webclient).DownloadString(("{0}{1}" -f
+      'https://raw.githubusercontent.com/appveyor/ci/master/scripts/',
+      'enable-rdp.ps1')))
 
 # vim: softtabstop=2 shiftwidth=2
