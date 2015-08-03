@@ -17,8 +17,15 @@ init: # Install and update conda
 
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
-  - C:\Python34-x64\Scripts\conda.exe build 7za -q
   - C:\Python34-x64\Scripts\conda.exe build winshell -q
+  - C:\Python34-x64\Scripts\conda.exe build 7za-9.20 -q
+  - >
+      C:\Python34-x64\Scripts\conda.exe install
+      C:\Python34-x64\conda-bld\win-64\7za-9.20-1.tar.bz2
+      --yes -q -f
+  - C:\Python34-x64\Scripts\7za.exe
+  - C:\Python34-x64\Scripts\conda.exe list
+  - C:\Python34-x64\Scripts\conda.exe info
 
 after_build:
   - cd C:\Python34-x64\conda-bld\win-64\
@@ -41,5 +48,3 @@ after_build:
       iex ((new-object net.webclient).DownloadString(("{0}{1}" -f
       'https://raw.githubusercontent.com/appveyor/ci/master/scripts/',
       'enable-rdp.ps1')))
-
-# vim: softtabstop=2 shiftwidth=2

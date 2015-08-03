@@ -13,6 +13,10 @@ source:
 build:
   number: 1
 
+test:
+  commands:
+    - 7za --help
+
 about:
   home: http://www.7-zip.org
   license: LGPL
