@@ -21,7 +21,7 @@ requirements:
 
 test:
   commands:
-    - powershell "cmd /c 7za --help | Select -First 2"
+    - 7za | findstr 7-Zip
 
 about:
   home: http://www.7-zip.org
