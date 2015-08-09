@@ -1,7 +1,6 @@
 A way to install vim_ on Windows using conda_, specifically install a
 version of ``gvim`` on Windows 7 that is compatible with vim-ipython_.
 
-
 .. image:: https://ci.appveyor.com/api/projects/status/
    abym5u9rxjrsj2fx?svg=true
    :width: 300 px
@@ -21,16 +20,21 @@ Windows
         bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda3 &&
         export PATH=/opt/miniconda3/bin:$PATH
 
-
     The install folder must support symbolic links.
 
 2.  Update `conda` and  install packages::
 
-        conda update conda
-        conda install flake8 xlrd
-        conda install -c maxwell-k google-api-client
+        conda update conda --yes
+        conda install jinja2 flake8 xlrd --yes
+        conda install -c maxwell-k google-api-client --yes
         # windows only
         conda install -c maxwell-k winshell ipython pyzmq
+
+3.  If building and uploading packages on this machine::
+
+        conda install anaconda-client conda-build --yes
+        anaconda login
+        anaconda whoami
 
 .. _Miniconda: http://conda.pydata.org/miniconda.html
 
@@ -51,21 +55,18 @@ Notes
     file-systems
 -   Encrypt data from the account menu or using
     https://ci.appveyor.com/tools/encrypt
--   Create an authentication token with::
+-   Manage authentication tokens:
 
-        rem Login with password:
-        anaconda login
-        rem Show current user information:
-        anaconda whoami
-        rem List tokens:
-        anaconda auth -l
-        rem Remove a token:
-        anaconda auth -r <name>
-        rem Show help:
-        anaconda auth -h
-        rem Create a token named appveyor:
-        anaconda auth -n appveyor --create --out token.txt
-        rem Different scopes can be specified with -x
+    =================== =====================================================
+    Action              Command
+    =================== =====================================================
+    List tokens         ``anaconda auth -l``
+    Remove a token      ``anaconda auth -r <name>``
+    Show help           ``anaconda auth -h``
+    Create a token      ``anaconda auth -n <name> --create --out token.txt``
+    =================== =====================================================
+
+    Different scopes can be specified with ``-x``.
 
 -   Build scripts inside `meta.yaml` don't work on Windows
     http://conda.pydata.org/docs/building/meta-yaml.html#script
