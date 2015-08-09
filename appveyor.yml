@@ -35,6 +35,7 @@ build_script:
   - conda build pyasn1_modules -q
   - conda build rsa -q
   - conda build oauth2client -q
+  - conda build simplejson -q
   - conda build uritemplate -q
   - conda build google-api-python-client -q
 
@@ -51,6 +52,7 @@ after_build:
       pyasn1_modules-*.tar.bz2
       rsa-*.tar.bz2
       oauth2client-*.tar.bz2
+      simplejson-*.tar.bz2
       uritemplate-*.tar.bz2
       google-api-python-client-*.tar.bz2
       ) do (
