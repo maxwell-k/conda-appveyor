@@ -1,0 +1,34 @@
+package:
+  name: pyasn1
+  version: "0.1.8"
+
+source:
+  fn: pyasn1-0.1.8.tar.gz
+  url: https://pypi.python.org/packages/source/p/pyasn1/pyasn1-0.1.8.tar.gz
+  md5: 7f6526f968986a789b1e5e372f0b7065
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+    - pyasn1
+    - pyasn1.codec
+    - pyasn1.codec.ber
+    - pyasn1.codec.cer
+    - pyasn1.codec.der
+    - pyasn1.compat
+    - pyasn1.type
+
+about:
+  home: http://sourceforge.net/projects/pyasn1/
+  license: BSD License
+  summary: 'ASN.1 types and codecs'
