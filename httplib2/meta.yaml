@@ -1,0 +1,28 @@
+package:
+  name: httplib2
+  version: "0.9.1"
+
+source:
+  fn: httplib2-0.9.1.tar.gz
+  url: https://pypi.python.org/packages/source/h/httplib2/httplib2-0.9.1.tar.gz
+  md5: c49590437e4c5729505d034cd34a8528
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+    - httplib2
+
+about:
+  home: https://github.com/jcgregorio/httplib2
+  license: MIT License
+  summary: 'A comprehensive HTTP client library.'
