@@ -32,6 +32,7 @@ build_script:
   - conda build 7za -q  # 7z or 7za must already be installed
   - conda build google-api-python-client -q
   - conda build git -q
+  - conda build sqlite3 -q
 
 after_build:
   - cd C:\Python34-x64\conda-bld\win-64\

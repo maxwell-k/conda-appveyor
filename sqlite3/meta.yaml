@@ -1,0 +1,20 @@
+package:
+  name: sqlite3
+  version: "3.8.11.1"
+
+source:
+  fn: sqlite-shell-win32-x86-3081101.zip # [win]
+  url: https://www.sqlite.org/2015/sqlite-shell-win32-x86-3081101.zip # [win]
+  sha1: 1640b3608784a36a113d4fcf69681503e4e9cdc3 # [win]
+
+build:
+  number: 1
+
+test:
+  commands:
+    - sqlite3 --version # [win]
+
+about:
+  home: https://www.sqlite.org
+  license: Public Domain
+  summary: SQLite is the most widely deployed database engine in the world.
