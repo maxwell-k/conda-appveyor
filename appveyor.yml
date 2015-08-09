@@ -13,9 +13,8 @@ init: # Install and update conda
   - del .\Miniconda3-latest-Windows-x86_64.exe
   - set PATH=C:\Python34-x64\Scripts;%PATH%
   - conda update conda --yes -q
-  - conda install jinja2 --yes -q  # To avoid error messages about importing
-  - conda install conda-build --yes -q
-  - conda install anaconda-client --yes -q
+  # jinja2 To avoid error messages about importing
+  - conda install anaconda-client conda-build jinja2 --yes -q
 
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
@@ -33,8 +32,7 @@ after_build:
       winshell-*.tar.bz2
       ) do (
       appveyor PushArtifact %%i &&
-      anaconda -t %auth_token%
-      upload --no-progress %%i 2> nul ||
+      anaconda -t %auth_token% upload --no-progress %%i 2> nul ||
       cmd /c "exit /b 0"
       )
 
