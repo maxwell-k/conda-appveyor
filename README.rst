@@ -21,6 +21,7 @@ Notes
 -   Encrypt data from the account menu or using
     https://ci.appveyor.com/tools/encrypt
 -   Create an authentication token with::
+
         rem Login with password:
         anaconda login
         rem Show current user information:
@@ -34,8 +35,6 @@ Notes
         rem Create a token named appveyor:
         anaconda auth -n appveyor --create --out token.txt
         rem Different scopes can be specified with -x
-
-
 
 Steps
 =====
@@ -74,7 +73,7 @@ Checks
 References
 ==========
 
--   | Why i promote conda, Travis Oliphant
+-   | Why I promote conda, Travis Oliphant
     | http://technicaldiscovery.blogspot.co.uk/2013/12/why-i-promote-conda.html
 -   | Build and test recipes for conda, Conda organisation
     | https://github.com/conda/conda-recipes
