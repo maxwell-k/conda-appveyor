@@ -1,0 +1,50 @@
+package:
+  name: rsa
+  version: "3.2"
+
+source:
+  fn: rsa-3.2.tar.gz
+  url: https://pypi.python.org/packages/source/r/rsa/rsa-3.2.tar.gz
+  md5: d2385469e2c76f33124709d09e559615
+
+build:
+  number: 1
+  entry_points:
+    - pyrsa-priv2pub = rsa.util:private_to_public
+    - pyrsa-keygen = rsa.cli:keygen
+    - pyrsa-encrypt = rsa.cli:encrypt
+    - pyrsa-decrypt = rsa.cli:decrypt
+    - pyrsa-sign = rsa.cli:sign
+    - pyrsa-verify = rsa.cli:verify
+    - pyrsa-encrypt-bigfile = rsa.cli:encrypt_bigfile
+    - pyrsa-decrypt-bigfile = rsa.cli:decrypt_bigfile
+
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pyasn1 >=0.1.3
+
+  run:
+    - python
+    - pyasn1 >=0.1.3
+
+test:
+  imports:
+    - rsa
+
+  commands:
+    - pyrsa-priv2pub --help
+    - pyrsa-keygen --help
+    - pyrsa-encrypt --help
+    - pyrsa-decrypt --help
+    - pyrsa-sign --help
+    - pyrsa-verify --help
+    - pyrsa-encrypt-bigfile --help
+    - pyrsa-decrypt-bigfile --help
+
+about:
+  home: http://stuvel.eu/rsa
+  license: Apache Software License
+  summary: 'Pure-Python RSA implementation'

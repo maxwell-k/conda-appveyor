@@ -33,6 +33,7 @@ build_script:
   - conda build httplib2 -q
   - conda build pyasn1 -q
   - conda build pyasn1_modules -q
+  - conda build rsa -q
   - conda build oauth2client -q
   - conda build google-api-python-client -q
 
@@ -47,6 +48,7 @@ after_build:
       httplib2-*.tar.bz2
       pyasn1-*.tar.bz2
       pyasn1_modules-*.tar.bz2
+      rsa-*.tar.bz2
       oauth2client-*.tar.bz2
       google-api-python-client-*.tar.bz2
       ) do (
