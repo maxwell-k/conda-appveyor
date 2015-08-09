@@ -18,6 +18,8 @@ Notes
 -   AVG causes an issue which requires local administrator rights
 -   Installs into ``%USERPROFILE%\Miniconda3`` or
     ``%USERPROFILE%\AppData\Local\Coninuum\Miniconda3``
+-   The download is extracted to ``%ROOT%\conda-bld\work``
+-   The build is in ``%ROOT%\envs\_build``
 -   ``cmd`` lines in ``appveyor.yml`` are treated as batch files, so double
     percent signs: ``%%i`` not ``%i``
 -   ``cmd.exe`` shell doesn't support wild-card expansion, applications have to
@@ -86,5 +88,7 @@ References
     | https://support.microsoft.com/en-us/kb/75634
 -   | appveyor.yml reference, AppVeyor
     | http://www.appveyor.com/docs/appveyor-yml
+-   | Conda Environment Variables
+    | http://conda.pydata.org/docs/building/environment-vars.html
 
 .. vim: ft=rst
