@@ -42,6 +42,8 @@ Notes
         rem Create a token named appveyor:
         anaconda auth -n appveyor --create --out token.txt
         rem Different scopes can be specified with -x
+-   Build scripts inside `meta.yaml` don't work on Windows
+    http://conda.pydata.org/docs/building/meta-yaml.html#script
 
 Steps
 =====
