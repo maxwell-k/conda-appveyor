@@ -22,7 +22,8 @@ install: # Install and update conda
 # https://github.com/conda/conda-build/blob/master/conda_build/windows.py#L56
 # Using the SDK is a work around:
 # http://help.appveyor.com/discussions/questions/213-platform-x86-is-not-32-bit
-  - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
+  - 'cd "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\"'
+  - SetEnv.cmd /Release /x64
 
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
