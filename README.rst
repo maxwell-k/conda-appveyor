@@ -1,6 +1,11 @@
 A way to install vim_ on Windows using conda_, specifically install a
 version of ``gvim`` on Windows 7 that is compatible with vim-ipython_.
 
+
+.. image:: https://ci.appveyor.com/api/projects/status/
+   abym5u9rxjrsj2fx?svg=true
+   :width: 300 px
+
 .. _vim: http://www.vim.org
 .. _conda: http://conda.pydata.org
 .. _vim-ipython: https://github.com/ivanov/vim-ipython
