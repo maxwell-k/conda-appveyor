@@ -10,22 +10,28 @@ init: # Install and update conda
       appveyor DownloadFile
       http://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe
   - .\Miniconda3-latest-Windows-x86_64.exe /S /D=C:\Python34-x64
-  - C:\Python34-x64\Scripts\conda.exe update conda --yes -q
-  - C:\Python34-x64\Scripts\conda.exe install conda-build --yes -q
-  - C:\Python34-x64\Scripts\conda.exe install anaconda-client --yes -q
   - del .\Miniconda3-latest-Windows-x86_64.exe
+  - set PATH=C:\Python34-x64\Scripts;%PATH%
+  - set PATH
+  - conda update conda --yes -q
+  - conda install conda-build --yes -q
+  - conda install anaconda-client --yes -q
 
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
-  - C:\Python34-x64\Scripts\conda.exe build winshell -q
-  - C:\Python34-x64\Scripts\conda.exe build 7za-9.20 -q
+  - set PATH
+  # Prerequisites
+  - conda build 7za-9.20 -q
   - >
-      C:\Python34-x64\Scripts\conda.exe install
-      C:\Python34-x64\conda-bld\win-64\7za-9.20-1.tar.bz2
+      conda install C:\Python34-x64\conda-bld\win-64\7za-9.20-1.tar.bz2
       --yes -q -f
-  - C:\Python34-x64\Scripts\conda.exe build 7za -q
+  - conda list
+  # Main build
+  - conda build winshell -q
+  - conda build 7za -q
 
 after_build:
+  - set PATH
   - cd C:\Python34-x64\conda-bld\win-64\
 # A second, identical appveyor build results in a conflict that shows as a
 # build failure. To add a new build increment the build number in meta.yaml.
@@ -35,14 +41,14 @@ after_build:
       winshell-*.tar.bz2
       ) do (
       appveyor PushArtifact %%i &&
-      C:\Python34-x64\Scripts\anaconda.exe -t %auth_token%
+      anaconda -t %auth_token%
       upload --no-progress %%i 2> nul ||
       cmd /c "exit /b 0"
       )
 
 # To debug using Remote Desktop Protocal (RDP):
-  - ps: >
-      $blockRdp = $true;
-      iex ((new-object net.webclient).DownloadString(("{0}{1}" -f
-      'https://raw.githubusercontent.com/appveyor/ci/master/scripts/',
-      'enable-rdp.ps1')))
+# - ps: >
+#     $blockRdp = $true;
+#     iex ((new-object net.webclient).DownloadString(("{0}{1}" -f
+#     'https://raw.githubusercontent.com/appveyor/ci/master/scripts/',
+#     'enable-rdp.ps1')))

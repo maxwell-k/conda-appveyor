@@ -13,7 +13,11 @@ build:
 
 requirements:
   build:
-    - 7za ==9.20
+    # This package requires an earlier version of 7za but conda-build doesn't
+    # allow that sort of dependency.
+    # https://github.com/conda/conda-build/blob/master/
+    # conda_build/metadata.py#L343
+    # - 7za ==9.20
 
 test:
   commands:
