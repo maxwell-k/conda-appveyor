@@ -72,6 +72,10 @@ Notes
 
 -   Build scripts inside `meta.yaml` don't work on Windows
     http://conda.pydata.org/docs/building/meta-yaml.html#script
+-   Check for long lines with ``grep -r '.\{80,\}' .``
+-   ``\`` is the line continuation character inside "s,
+    see `YAML Double Quoted Line Breaks
+    <http://www.yaml.org/spec/1.2/spec.html#id2787745>`__
 
 Checks
 ======

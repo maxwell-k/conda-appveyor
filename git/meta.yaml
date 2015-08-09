@@ -2,31 +2,16 @@ package:
   name: git
   version: "v2.4.6.windows.1"
 
-
 source:
-  fn: PortableGit-2.4.6-5th-release-candidate-64-bit.7z.exe
-  url: https://github.com/git-for-windows/git/releases/download/v2.4.6.windows.1/PortableGit-2.4.6-5th-release-candidate-64-bit.7z.exe
-#  fn: Git-2.4.6-5th-release-candidate-64-bit.exe [win64]
-#  url: https://github.com/git-for-windows/git/releases/download/v2.4.6.windows.1/Git-2.4.6-5th-release-candidate-64-bit.exe [win64]
-# Might work with bld.bat as:
-# %SRC_DIR%\Git-2.4.6-5th-release-candidate-64-bit.exe /DIR=%PREFIX% /LOADINF=%RECIPE_DIR%\install.inf /SILENT
-# copy /y %PREFIX%\bin\* %LIBRARY_BIN%
-# and install.inf as:
-# [Setup]
-# Lang=default
-# Group=Git
-# NoIcons=1
-# SetupType=default
-# Components=consolefont
-# Tasks=
-# PathOption=BashOnly
-# SSHOption=OpenSSH
-# CRLFOption=CRLFAlways
-# BashTerminalOption=MinTTY
-# PerformanceTweaksFSCache=Disabled
+  fn: PortableGit-2.4.6-5th-release-candidate-64-bit.7z.exe  # [win64]
+  url:
+    "https://github.com/git-for-windows/git/releases/download/\
+    v2.4.6.windows.1/\
+    PortableGit-2.4.6-5th-release-candidate-64-bit.7z.exe" # [win64]
 
 
 about:
   home: https://github.com/git-for-windows/git
-  
+  summary: A fork of Git containing Windows-specific patches.
+  license: GPLv2
 # http://www.jrsoftware.org/ishelp/index.php?topic=setupcmdline

@@ -4,7 +4,8 @@ package:
 
 source:
   fn: simplejson-3.8.0.tar.gz
-  url: https://pypi.python.org/packages/source/s/simplejson/simplejson-3.8.0.tar.gz
+  url: "https://pypi.python.org/packages/source/s/simplejson/\
+    simplejson-3.8.0.tar.gz"
   md5: 72f3b93a6f9808df81535f79e79565a2
 
 build:

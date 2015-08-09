@@ -4,7 +4,8 @@ package:
 
 source:
   fn: google-api-python-client-1.4.1.tar.gz
-  url: https://pypi.python.org/packages/source/g/google-api-python-client/google-api-python-client-1.4.1.tar.gz
+  url: "https://pypi.python.org/packages/source/g/google-api-python-client/\
+    google-api-python-client-1.4.1.tar.gz"
   md5: 3e2cf16cf5502f6315aaf2fc8f1d7437
 
 build:

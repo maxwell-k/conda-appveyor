@@ -4,7 +4,8 @@ package:
 
 source:
   fn: pyasn1-modules-0.0.7.tar.gz
-  url: https://pypi.python.org/packages/source/p/pyasn1-modules/pyasn1-modules-0.0.7.tar.gz
+  url: "https://pypi.python.org/packages/source/p/pyasn1-modules/\
+    pyasn1-modules-0.0.7.tar.gz"
   md5: 9e92623a86709a77d43d406612ad7389
 
 build:

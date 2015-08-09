@@ -6,20 +6,21 @@ build:
   number: 2
 
 source:
-  fn: winshell-0.6.zip
-  url: https://pypi.python.org/packages/source/w/winshell/winshell-0.6.zip
-  md5: 378164955ff8511eaebc64fda8a04d77
+  fn: winshell-0.6.zip # [win]
+  url: "https://pypi.python.org/packages/source/w/winshell/\
+    winshell-0.6.zip" # [win]
+  md5: 378164955ff8511eaebc64fda8a04d77 # [win]
 
 requirements:
   build:
-    - python
-    - pywin32
+    - python # [win]
+    - pywin32 # [win]
 
   run:
-    - python
-    - pywin32
+    - python # [win]
+    - pywin32 # [win]
 
 about:
   home: https://github.com/tjguk/winshell
   license: http://www.opensource.org/licenses/mit-license.php
-  summary: 'Windows shell functions'
+  summary: Windows shell functions

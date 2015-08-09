@@ -4,7 +4,8 @@ package:
 
 source:
   fn: oauth2client-1.4.12.tar.gz
-  url: https://pypi.python.org/packages/source/o/oauth2client/oauth2client-1.4.12.tar.gz
+  url: "https://pypi.python.org/packages/source/o/oauth2client/\
+    oauth2client-1.4.12.tar.gz"
   md5: 829a05a559b43215d67947aaff9c11b5
 
 build:
