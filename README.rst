@@ -104,5 +104,7 @@ References
     | http://www.appveyor.com/docs/appveyor-yml
 -   | Conda Environment Variables
     | http://conda.pydata.org/docs/building/environment-vars.html
+-   | Conda linking ... to DLL
+    | http://stackoverflow.com/questions/25645526/
 
 .. vim: ft=rst
