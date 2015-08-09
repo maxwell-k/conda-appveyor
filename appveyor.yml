@@ -12,26 +12,16 @@ init: # Install and update conda
   - .\Miniconda3-latest-Windows-x86_64.exe /S /D=C:\Python34-x64
   - del .\Miniconda3-latest-Windows-x86_64.exe
   - set PATH=C:\Python34-x64\Scripts;%PATH%
-  - set PATH
   - conda update conda --yes -q
   - conda install conda-build --yes -q
   - conda install anaconda-client --yes -q
 
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
-  - set PATH
-  # Prerequisites
-  - conda build 7za-9.20 -q
-  - >
-      conda install C:\Python34-x64\conda-bld\win-64\7za-9.20-1.tar.bz2
-      --yes -q -f
-  - conda list
-  # Main build
   - conda build winshell -q
   - conda build 7za -q
 
 after_build:
-  - set PATH
   - cd C:\Python34-x64\conda-bld\win-64\
 # A second, identical appveyor build results in a conflict that shows as a
 # build failure. To add a new build increment the build number in meta.yaml.
