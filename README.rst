@@ -15,9 +15,9 @@ Windows
 1.  Either Install a Windows 64 bit, Python 3.4 version of Miniconda_ using
     all of the default options, or download and run the script::
 
-        curl -O https://repo.continuum.io/miniconda/\
-        Miniconda3-latest-Linux-x86_64.sh &&
-        bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda3 &&
+        file=Miniconda3-latest-Linux-x86_64.sh &&
+        curl -O "https://repo.continuum.io/miniconda/${file}" &&
+        bash "${file}" -b -p /opt/miniconda3 &&
         export PATH=/opt/miniconda3/bin:$PATH
 
     The install folder must support symbolic links.
@@ -26,15 +26,17 @@ Windows
 
         conda update conda --yes
         conda install jinja2 flake8 xlrd --yes
-        conda install -c maxwell-k google-api-client --yes
+        conda install -c maxwell-k google-api-python-client --yes
         # windows only
-        conda install -c maxwell-k winshell ipython pyzmq
+        conda install -c maxwell-k winshell ipython pyzmq git sqlite3 --yes
 
 3.  If building and uploading packages on this machine::
 
         conda install anaconda-client conda-build --yes
         anaconda login
         anaconda whoami
+        git config --global user.name <name>
+        git config --global user.email <email>
 
 .. _Miniconda: http://conda.pydata.org/miniconda.html
 
