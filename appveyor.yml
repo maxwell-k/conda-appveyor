@@ -31,6 +31,7 @@ build_script:
   - conda build 7za -q  # 7z or 7za must already be installed
   - conda build httplib2 -q
   - conda build pyasn1 -q
+  - conda build oauth2client -q
 
 after_build:
   - cd C:\Python34-x64\conda-bld\win-64\
@@ -42,6 +43,7 @@ after_build:
       winshell-*.tar.bz2
       httplib2-*.tar.bz2
       pyasn1-*.tar.bz2
+      oauth2client-*.tar.bz2
       ) do (
       appveyor PushArtifact %%i &&
       anaconda -t %auth_token% upload --no-progress %%i 2> nul ||

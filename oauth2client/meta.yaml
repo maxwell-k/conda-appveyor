@@ -1,0 +1,38 @@
+package:
+  name: oauth2client
+  version: "1.4.12"
+
+source:
+  fn: oauth2client-1.4.12.tar.gz
+  url: https://pypi.python.org/packages/source/o/oauth2client/oauth2client-1.4.12.tar.gz
+  md5: 829a05a559b43215d67947aaff9c11b5
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - httplib2 >=0.9.1
+    - pyasn1 >=0.1.7
+    - pyasn1_modules >=0.0.5
+    - rsa >=3.1.4
+    - six >=1.6.1
+
+  run:
+    - python
+    - httplib2 >=0.9.1
+    - pyasn1 >=0.1.7
+    - pyasn1_modules >=0.0.5
+    - rsa >=3.1.4
+    - six >=1.6.1
+
+test:
+  imports:
+    - oauth2client
+
+about:
+  home: http://github.com/google/oauth2client/
+  license: Apache Software License
+  summary: 'OAuth 2.0 client library'
