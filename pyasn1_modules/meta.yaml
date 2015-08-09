@@ -1,5 +1,5 @@
 package:
-  name: pyasn1-modules
+  name: pyasn1_modules
   version: "0.0.7"
 
 source:

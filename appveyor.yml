@@ -31,7 +31,7 @@ build_script:
   - conda build 7za -q  # 7z or 7za must already be installed
   - conda build httplib2 -q
   - conda build pyasn1 -q
-  - conda build pysasn-modules -q
+  - conda build pyasn1_modules -q
   - conda build oauth2client -q
   - conda build google-api-python-client -q
 
