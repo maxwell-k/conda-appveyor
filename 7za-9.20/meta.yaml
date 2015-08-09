@@ -15,7 +15,7 @@ build:
 
 test:
   commands:
-    - 7za --help
+    - powershell "cmd /c 7za --help | Select -First 2"
 
 about:
   home: http://www.7-zip.org
