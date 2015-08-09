@@ -4,7 +4,7 @@ environment:
   auth_token:
     secure: JX1qsRmmO9Lw2BUk9rVv4Eht+1vvE3wCS56PXjcWDQhGZs+Kj/38hzYb8T6zMKuS
 
-init: # Install and update conda
+install: # Install and update conda
   - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
   - >
       appveyor DownloadFile
@@ -15,6 +15,14 @@ init: # Install and update conda
   - conda update conda --yes -q
   # jinja2 To avoid error messages about importing
   - conda install anaconda-client conda-build jinja2 --yes -q
+# Visual Studio 2010 Express as installed by AppVeyor doesn't include a 64 bit
+# compiler so the generated header produces an error:
+# "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat" amd64
+# The specificed configuration type is missing...
+# https://github.com/conda/conda-build/blob/master/conda_build/windows.py#L56
+# Using the SDK is a work around:
+# http://help.appveyor.com/discussions/questions/213-platform-x86-is-not-32-bit
+  - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
 
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER% # C:\projects\conda-appveyor
