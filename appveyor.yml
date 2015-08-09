@@ -44,18 +44,7 @@ after_build:
 # A second, identical appveyor build results in a conflict that shows as a
 # build failure. To add a new build increment the build number in meta.yaml.
   - >
-      for %%i in (
-      7za-*.tar.bz2
-      winshell-*.tar.bz2
-      httplib2-*.tar.bz2
-      pyasn1-*.tar.bz2
-      pyasn1_modules-*.tar.bz2
-      rsa-*.tar.bz2
-      oauth2client-*.tar.bz2
-      simplejson-*.tar.bz2
-      uritemplate-*.tar.bz2
-      google-api-python-client-*.tar.bz2
-      ) do (
+      for %%i in ( *.tar.bz2 ) do (
       appveyor PushArtifact %%i &&
       anaconda -t %auth_token% upload --no-progress %%i 2> nul ||
       cmd /c "exit /b 0"
