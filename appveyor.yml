@@ -33,6 +33,7 @@ build_script:
   - conda build google-api-python-client -q
   - conda build git -q
   - conda build sqlite3 -q
+  - conda build packages -q
 
 after_build:
   - cd C:\Python34-x64\conda-bld\win-64\
@@ -44,6 +45,10 @@ after_build:
       anaconda -t %auth_token% upload --no-progress %%i 2> nul ||
       cmd /c "exit /b 0"
       )
+
+on_success:
+  - conda install -c maxwell-k packages --yes -q
+  - conda list
 
 # To debug using Remote Desktop Protocal (RDP):
 # - ps: >

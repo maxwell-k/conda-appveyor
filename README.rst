@@ -1,5 +1,8 @@
-A way to install vim_ on Windows using conda_, specifically install a
-version of ``gvim`` on Windows 7 that is compatible with vim-ipython_.
+Packages for Windows using conda and AppVeyor
+
+Intended to be a way to install vim_ on Windows using conda_, specifically
+install a version of ``gvim`` on Windows 7 that is compatible with
+vim-ipython_.
 
 .. image:: https://ci.appveyor.com/api/projects/status/
    abym5u9rxjrsj2fx?svg=true
@@ -24,15 +27,11 @@ Windows
 
 2.  Update `conda` and  install packages::
 
-        conda update conda --yes
-        conda install jinja2 flake8 xlrd --yes
-        conda install -c maxwell-k google-api-python-client --yes
-        # windows only
-        conda install -c maxwell-k winshell ipython pyzmq git sqlite3 --yes
+        conda update conda --yes &&
+        conda install -c maxwell-k packages --yes
 
-3.  If building and uploading packages on this machine::
+3.  Input important settings::
 
-        conda install anaconda-client conda-build --yes
         anaconda login
         anaconda whoami
         git config --global user.name <name>

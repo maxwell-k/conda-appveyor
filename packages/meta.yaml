@@ -1,0 +1,28 @@
+package:
+  name: packages
+  version: "0.1"
+
+build:
+  number: 1
+
+requirements:
+  run:
+    - python
+    # from built-in channels
+    - anaconda-client
+    - conda-build
+    - flake8
+    - ipython # [win]
+    - jinja2
+    - pyzmq # [win]
+    - xlrd
+    # from maxwell-k
+    - 7za # [win64]
+    - git # [win64]
+    - google-api-python-client
+    - sqlite3 # [win]
+    - winshell # [win]
+
+about:
+  home: http://github.com/maxwell-k/conda-appveyor
+  summary: Packages for Windows using conda and AppVeyor
