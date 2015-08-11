@@ -2,6 +2,9 @@ package:
   name: git
   version: "v2.4.6.windows.1"
 
+build:
+  number: 1
+
 source:
   fn: PortableGit-2.4.6-5th-release-candidate-64-bit.7z.exe  # [win64]
   url:
