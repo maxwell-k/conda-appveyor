@@ -33,6 +33,7 @@ build_script:
   - conda build google-api-python-client -q
   - conda build git -q
   - conda build sqlite3 -q
+  - conda build pep8-naming -q
   - conda build packages -q
 
 after_build:
