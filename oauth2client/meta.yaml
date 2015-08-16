@@ -9,7 +9,7 @@ source:
   md5: 829a05a559b43215d67947aaff9c11b5
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -17,7 +17,7 @@ requirements:
     - setuptools
     - httplib2 >=0.9.1
     - pyasn1 >=0.1.7
-    - pyasn1_modules >=0.0.5
+    - pyasn1-modules >=0.0.5
     - rsa >=3.1.4
     - six >=1.6.1
 
@@ -25,7 +25,7 @@ requirements:
     - python
     - httplib2 >=0.9.1
     - pyasn1 >=0.1.7
-    - pyasn1_modules >=0.0.5
+    - pyasn1-modules >=0.0.5
     - rsa >=3.1.4
     - six >=1.6.1
 
