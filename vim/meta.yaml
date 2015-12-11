@@ -1,0 +1,13 @@
+package:
+  name: gvim
+  version: "7.4.812"
+
+build:
+  number: 1
+
+source:
+  url:
+    "https://github.com/maxwell-k/vim-ci/releases/download/\
+    v7-4-812/vim74rt.zip"
+  fn: vim74rt.zip
+  sha1: 21634b386ebafb4a53525714052337b3b5fbe17d
